@@ -1,0 +1,62 @@
+<html>
+ <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="../coverage.css"/>  <title> gitapi/db.clj </title>
+ </head>
+ <body>
+<span class="covered" title="1 out of 1 forms covered">
+                001&nbsp;&nbsp;(ns&nbsp;gitapi.db
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                002&nbsp;&nbsp;&nbsp;&nbsp;(:require&nbsp;[hugsql.core&nbsp;:as&nbsp;hugsql]
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                003&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[environ.core&nbsp;:refer&nbsp;[env]]))
+                </span><br/>
+<span class="blank" title="0 out of 0 forms covered">
+                004&nbsp;&nbsp;
+                </span><br/>
+<span class="covered" title="9 out of 9 forms covered">
+                005&nbsp;&nbsp;(def&nbsp;spec&nbsp;{:dbtype&nbsp;&quot;postgresql&quot;
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                006&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:connection-uri&nbsp;&quot;jdbc:postgresql:&#x2F;&#x2F;postgres:5432&#x2F;postgres&quot;
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                007&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:user&nbsp;&quot;postgres&quot;
+                </span><br/>
+<span class="covered" title="3 out of 3 forms covered">
+                008&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:password&nbsp;(env&nbsp;:db-password)})
+                </span><br/>
+<span class="blank" title="0 out of 0 forms covered">
+                009&nbsp;&nbsp;
+                </span><br/>
+<span class="covered" title="1 out of 1 forms covered">
+                010&nbsp;&nbsp;(def&nbsp;config
+                </span><br/>
+<span class="covered" title="10 out of 10 forms covered">
+                011&nbsp;&nbsp;&nbsp;&nbsp;{:store&nbsp;:database
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                012&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:migration-dir&nbsp;&quot;migrations&#x2F;&quot;
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                013&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:init-in-transaction?&nbsp;false
+                </span><br/>
+<span class="covered" title="1 out of 1 forms covered">
+                014&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:db&nbsp;spec
+                </span><br/>
+<span class="not-tracked" title="0 out of 0 forms covered">
+                015&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:init-script&nbsp;&quot;init.sql&quot;})
+                </span><br/>
+<span class="blank" title="0 out of 0 forms covered">
+                016&nbsp;&nbsp;
+                </span><br/>
+<span class="partial" title="42 out of 69 forms covered">
+                017&nbsp;&nbsp;(hugsql&#x2F;def-db-fns&nbsp;&quot;gitapi&#x2F;sql&#x2F;repository.sql&quot;)
+                </span><br/>
+<span class="partial" title="42 out of 69 forms covered">
+                018&nbsp;&nbsp;(hugsql&#x2F;def-db-fns&nbsp;&quot;gitapi&#x2F;sql&#x2F;user.sql&quot;)
+                </span><br/>
+ </body>
+</html>
